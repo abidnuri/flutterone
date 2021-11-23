@@ -77,20 +77,33 @@ class MyApp extends StatelessWidget {
           Container(
               height: 350,
               width: 10,
-              color: Colors.black,
-              margin: const EdgeInsets.all(2)),
+              // color: Colors.black,
+              margin: const EdgeInsets.all(2),
+              decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                colors: [Colors.black, Colors.cyan, Colors.yellow],
+              ))),
           Container(
             height: 50,
             width: 150,
-            color: Colors.green,
+            // color: Colors.green,
             margin: const EdgeInsets.all(5),
             alignment: Alignment.center,
+            decoration: const BoxDecoration(
+                // color: Colors.black,
+                gradient: LinearGradient(
+              colors: [Colors.green, Colors.blue, Colors.yellow],
+              begin: Alignment.bottomRight,
+              end: Alignment.bottomLeft,
+            )),
             child: Container(
               height: 30,
               width: 30,
               // color: Colors.red,
+              child: const Text('Abid'),
+              alignment: Alignment.center,
               decoration: BoxDecoration(
-                color: Colors.red,
+                color: Colors.white,
                 borderRadius: BorderRadius.circular(15),
               ),
             ),
