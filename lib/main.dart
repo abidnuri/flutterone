@@ -16,81 +16,45 @@ class MyApp extends StatelessWidget {
         title: const Text('''Abid App'''),
         centerTitle: true,
       ),
-      drawer: const Drawer(),
-      body: Column(
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: Container(
-                  height: 400,
-                  width: 400,
-                  color: Colors.brown,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Container(
-                        height: 50,
-                        width: 50,
-                        color: Colors.amber,
-                      ),
-                      Container(
-                        height: 50,
-                        width: 50,
-                        color: Colors.red,
-                      ),
-                      Container(
-                        height: 50,
-                        width: 50,
-                        color: Colors.green,
-                      ),
-                    ],
-                  ),
-                ),
+      drawer: Drawer(
+        child: ListView(
+          children: const [
+            UserAccountsDrawerHeader(
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage(
+                    "https://scontent.fspd3-1.fna.fbcdn.net/v/t1.6435-9/126055920_1928818417259960_8439267374145155608_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=06y5gBZ2IvwAX_rBeX7&tn=-ITyfQxVkYqpnBtA&_nc_ht=scontent.fspd3-1.fna&oh=dd5ae9eb44ef51e545377b8d83250673&oe=61CC8AFF"),
               ),
-            ],
-          ),
-        ],
-      ), // part two
-
-      // Row(
-      //   children: [
-      //     //Use "ctrl+." for wrap something
-      //     Expanded(
-      //       flex: 1,
-      //       child: Container(
-      //         height: 100,
-      //         width: 100,
-      //         color: Colors.red,
-      //       ),
-      //     ),
-      //     Expanded(
-      //       flex: 4,
-      //       child: Container(
-      //         height: 100,
-      //         width: 100,
-      //         color: Colors.black,
-      //       ),
-      //     ),
-      //     Expanded(
-      //       flex: 5, // 60% of space => (6/(6 + 4))
-      //       child: Container(
-      //         height: 100,
-      //         width: 100,
-      //         color: Colors.green,
-      //         alignment: Alignment.center,
-      //         child: Container(
-      //           height: 50,
-      //           width: 50,
-      //           decoration: BoxDecoration(
-      //             borderRadius: BorderRadius.circular(10),
-      //             color: Colors.cyan,
-      //           ),
-      //         ),
-      //       ),
-      //     ),
-      //   ],
-      // ),//Part One
+              accountName: Text(
+                'Abid Nuri',
+                style: TextStyle(color: Colors.black, fontSize: 18),
+              ),
+              accountEmail: Text(
+                'abidnuri@gmail.com',
+                style: TextStyle(color: Colors.black, fontSize: 18),
+              ),
+            ),
+            // DrawerHeader(
+            //   child: Text('Abid'),
+            //   decoration: BoxDecoration(
+            //     color: Colors.amberAccent,
+            //   ),
+            // ),
+            ListTile(
+              title: Text('emails'),
+              leading: Icon(Icons.mail_rounded),
+            ),
+            ListTile(
+              title: Text('contact'),
+              leading: Icon(Icons.perm_contact_cal),
+            ),
+          ],
+        ),
+      ),
+      body: Center(
+        // child: Image.asset('name'),
+        child: Image.network(
+            'https://images.pexels.com/photos/10254311/pexels-photo-10254311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'),
+      ),
     );
   }
 }
