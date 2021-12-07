@@ -26,42 +26,22 @@ class MyApp extends StatelessWidget {
               ),
             ),
             ListTile(
-              title: const Text('Home'),
-              leading: const Icon(Icons.home),
+              title: Text('Home'),
+              leading: Icon(Icons.home),
               onLongPress: () {},
             ),
             ListTile(
-              title: const Text('About'),
-              leading: const Icon(Icons.account_box_rounded),
+              title: Text('About'),
+              leading: Icon(Icons.account_box_rounded),
               onLongPress: () {},
             ),
           ],
         ),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(8.0),
-        child: Center(
-          child: TextField(
-            // readOnly: true,
-            enabled: true,
-            autofocus: true,
-            // obscureText: true,
-            style: TextStyle(
-              color: Colors.red,
-            ),
-            decoration: InputDecoration(
-              label: Text('Name'),
-              labelStyle: TextStyle(
-                color: Colors.red,
-              ),
-              border: OutlineInputBorder(
-                borderSide: BorderSide.none,
-              ),
-              filled: true,
-              fillColor: Colors.grey,
-            ),
-          ),
-        ),
+      body: Center(
+        // child: Image.asset('name'),
+        child: Image.network(
+            'https://images.pexels.com/photos/10254311/pexels-photo-10254311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'),
       ),
     );
   }
