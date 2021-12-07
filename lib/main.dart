@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       body: Column(
-        children: const [
+        children: [
           Padding(
             padding: EdgeInsets.all(8.0),
             child: Center(
@@ -49,18 +49,18 @@ class MyApp extends StatelessWidget {
                 autofocus: true,
                 // obscureText: true,
                 style: TextStyle(
-                  color: Colors.red,
+                  color: Colors.blue[500],
                 ),
                 decoration: InputDecoration(
                   label: Text('Name'),
                   labelStyle: TextStyle(
-                    color: Colors.red,
+                    color: Colors.black,
                   ),
                   border: OutlineInputBorder(
                     borderSide: BorderSide.none,
                   ),
                   filled: true,
-                  fillColor: Colors.grey,
+                  fillColor: Colors.red.withOpacity(0.5),
                 ),
               ),
             ),
@@ -79,17 +79,23 @@ class MyApp extends StatelessWidget {
                 decoration: InputDecoration(
                   label: Text('Password'),
                   labelStyle: TextStyle(
-                    color: Colors.red,
+                    color: Colors.black,
                   ),
                   border: OutlineInputBorder(
-                    borderSide: BorderSide.none,
-                  ),
-                  filled: true,
-                  fillColor: Colors.grey,
+                      // borderSide: BorderSide(
+                      //   color: Colors.green,
+                      // ),
+                      ),
+                  // filled: true,
+                  // fillColor: Colors.red.withOpacity(0.5),
                 ),
               ),
             ),
           ),
+          ElevatedButton(
+            onPressed: () {},
+            child: Text('Submit'),
+          )
         ],
       ),
     );
