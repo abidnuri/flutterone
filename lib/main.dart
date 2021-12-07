@@ -102,9 +102,13 @@ class MyApp extends StatelessWidget {
             ),
           ),
           ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              primary: Colors.red, // background
+              onPrimary: Colors.white, // foreground
+            ),
             onPressed: () {},
             child: Text('Submit'),
-          )
+          ),
         ],
       ),
     );
