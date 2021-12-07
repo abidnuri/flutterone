@@ -40,6 +40,15 @@ class MyApp extends StatelessWidget {
       ),
       body: Column(
         children: [
+          Container(
+            child: Text(
+              "Sign In",
+              style: TextStyle(
+                fontSize: 35,
+                color: Colors.green,
+              ),
+            ),
+          ),
           Padding(
             padding: EdgeInsets.all(8.0),
             child: Center(
