@@ -38,30 +38,59 @@ class MyApp extends StatelessWidget {
           ],
         ),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(8.0),
-        child: Center(
-          child: TextField(
-            // readOnly: true,
-            enabled: true,
-            autofocus: true,
-            // obscureText: true,
-            style: TextStyle(
-              color: Colors.red,
-            ),
-            decoration: InputDecoration(
-              label: Text('Name'),
-              labelStyle: TextStyle(
-                color: Colors.red,
+      body: Column(
+        children: const [
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Center(
+              child: TextField(
+                // readOnly: true,
+                enabled: true,
+                autofocus: true,
+                // obscureText: true,
+                style: TextStyle(
+                  color: Colors.red,
+                ),
+                decoration: InputDecoration(
+                  label: Text('Name'),
+                  labelStyle: TextStyle(
+                    color: Colors.red,
+                  ),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                  ),
+                  filled: true,
+                  fillColor: Colors.grey,
+                ),
               ),
-              border: OutlineInputBorder(
-                borderSide: BorderSide.none,
-              ),
-              filled: true,
-              fillColor: Colors.grey,
             ),
           ),
-        ),
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Center(
+              child: TextField(
+                // readOnly: true,
+                enabled: true,
+                autofocus: true,
+                obscureText: true,
+                style: TextStyle(
+                  color: Colors.red,
+                ),
+                decoration: InputDecoration(
+                  label: Text('Password'),
+                  labelStyle: TextStyle(
+                    color: Colors.red,
+                  ),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                  ),
+                  filled: true,
+                  fillColor: Colors.grey,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
