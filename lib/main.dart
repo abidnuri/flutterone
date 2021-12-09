@@ -40,31 +40,51 @@ class MyApp extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Container(
-            child: Text(
-              "Sign In",
-              style: TextStyle(
-                fontSize: 35,
-                color: Colors.green,
+          // ignore: prefer_const_constructors
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              padding: const EdgeInsets.all(8.0),
+              decoration: BoxDecoration(
+                  color: Colors.orange,
+                  borderRadius: BorderRadius.circular(20)),
+              child: Text(
+                "Sign In",
+                // ignore: prefer_const_constructors
+                style: TextStyle(
+                  fontSize: 28,
+                  color: Colors.white,
+                  shadows: [
+                    Shadow(
+                      color: Colors.black,
+                      blurRadius: 3,
+                      offset: const Offset(3, 3),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Center(
               child: TextField(
                 // readOnly: true,
                 enabled: true,
                 autofocus: true,
+                textCapitalization: TextCapitalization.sentences,
                 // obscureText: true,
                 style: TextStyle(
                   color: Colors.blue[500],
                 ),
                 decoration: InputDecoration(
-                  label: Text('Name'),
-                  labelStyle: TextStyle(
+                  label: const Text('Name'),
+                  helperText: "Use Capital Letter",
+                  hintText: "Input your name",
+                  labelStyle: const TextStyle(
                     color: Colors.black,
                   ),
+                  // ignore: prefer_const_constructors
                   border: OutlineInputBorder(
                     borderSide: BorderSide.none,
                   ),
@@ -74,7 +94,7 @@ class MyApp extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(8.0),
             child: Center(
               child: TextField(
@@ -101,13 +121,86 @@ class MyApp extends StatelessWidget {
               ),
             ),
           ),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Center(
+              child: TextField(
+                // readOnly: true,
+                enabled: true,
+                autofocus: true,
+                // obscureText: true,
+                keyboardType: TextInputType.number, //only for popup
+                toolbarOptions: ToolbarOptions(
+                  copy: false,
+                  cut: false,
+                  paste: false,
+                  selectAll: false,
+                ),
+                style: TextStyle(
+                  color: Colors.red,
+                ),
+                decoration: InputDecoration(
+                  label: Text('Phone'),
+                  labelStyle: TextStyle(
+                    color: Colors.black,
+                  ),
+                  prefix: Text('+880'),
+                  suffixIcon: Icon(Icons.phone),
+                  border: OutlineInputBorder(
+                      // borderSide: BorderSide(
+                      //   color: Colors.green,
+                      // ),
+                      ),
+                  // filled: true,
+                  // fillColor: Colors.red.withOpacity(0.5),
+                ),
+                maxLength: 10,
+              ),
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Center(
+              child: TextField(
+                // readOnly: true,
+                enabled: true,
+                autofocus: true,
+                // obscureText: true,
+                keyboardType: TextInputType.number, //only for popup
+                toolbarOptions: ToolbarOptions(
+                  copy: false,
+                  cut: false,
+                  paste: false,
+                  selectAll: false,
+                ),
+                style: TextStyle(
+                  color: Colors.red,
+                ),
+                decoration: InputDecoration(
+                  label: Text('Email'),
+                  labelStyle: TextStyle(
+                    color: Colors.black,
+                  ),
+                  suffix: Text('.com'),
+                  suffixIcon: Icon(Icons.mail_rounded),
+                  border: OutlineInputBorder(
+                      // borderSide: BorderSide(
+                      //   color: Colors.green,
+                      // ),
+                      ),
+                  // filled: true,
+                  // fillColor: Colors.red.withOpacity(0.5),
+                ),
+              ),
+            ),
+          ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
               primary: Colors.red, // background
               onPrimary: Colors.white, // foreground
             ),
             onPressed: () {},
-            child: Text('Submit'),
+            child: const Text('Submit'),
           ),
         ],
       ),
