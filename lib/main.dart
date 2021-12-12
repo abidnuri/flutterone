@@ -38,171 +38,50 @@ class MyApp extends StatelessWidget {
           ],
         ),
       ),
-      body: Column(
-        children: [
-          // ignore: prefer_const_constructors
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              padding: const EdgeInsets.all(8.0),
+      body: Center(
+        child: Stack(
+          clipBehavior: Clip.none,
+          children: [
+            Container(
+              height: 300,
+              width: 300,
+              // ignore: prefer_const_constructors
               decoration: BoxDecoration(
-                  color: Colors.orange,
-                  borderRadius: BorderRadius.circular(20)),
-              child: Text(
-                "Sign In",
-                // ignore: prefer_const_constructors
-                style: TextStyle(
-                  fontSize: 28,
-                  color: Colors.white,
-                  shadows: [
-                    Shadow(
-                      color: Colors.black,
-                      blurRadius: 3,
-                      offset: const Offset(3, 3),
-                    ),
-                  ],
+                color: Colors.amber,
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(15),
+                  bottomRight: Radius.circular(15),
                 ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Center(
-              child: TextField(
-                // readOnly: true,
-                enabled: true,
-                autofocus: true,
-                textCapitalization: TextCapitalization.sentences,
-                // obscureText: true,
-                style: TextStyle(
-                  color: Colors.blue[500],
+                image: const DecorationImage(
+                  image: NetworkImage(
+                      'https://pngimage.net/wp-content/uploads/2019/05/royal-enfield-png-4.png'),
                 ),
-                decoration: InputDecoration(
-                  label: const Text('Name'),
-                  helperText: "Use Capital Letter",
-                  hintText: "Input your name",
-                  labelStyle: const TextStyle(
+                boxShadow: [
+                  BoxShadow(
                     color: Colors.black,
+                    blurRadius: 3,
+                    offset: Offset(3, 3),
                   ),
-                  // ignore: prefer_const_constructors
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide.none,
+                ],
+              ),
+            ),
+            const Positioned(
+              left: -40,
+              top: -40,
+              child: CircleAvatar(
+                radius: 50,
+                backgroundColor: Color(0xff1E1E1E),
+                child: Text(
+                  'in Stock',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
                   ),
-                  filled: true,
-                  fillColor: Colors.red.withOpacity(0.5),
                 ),
               ),
             ),
-          ),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Center(
-              child: TextField(
-                // readOnly: true,
-                enabled: true,
-                autofocus: true,
-                obscureText: true,
-                style: TextStyle(
-                  color: Colors.red,
-                ),
-                decoration: InputDecoration(
-                  label: Text('Password'),
-                  labelStyle: TextStyle(
-                    color: Colors.black,
-                  ),
-                  border: OutlineInputBorder(
-                      // borderSide: BorderSide(
-                      //   color: Colors.green,
-                      // ),
-                      ),
-                  // filled: true,
-                  // fillColor: Colors.red.withOpacity(0.5),
-                ),
-              ),
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Center(
-              child: TextField(
-                // readOnly: true,
-                enabled: true,
-                autofocus: true,
-                // obscureText: true,
-                keyboardType: TextInputType.number, //only for popup
-                toolbarOptions: ToolbarOptions(
-                  copy: false,
-                  cut: false,
-                  paste: false,
-                  selectAll: false,
-                ),
-                style: TextStyle(
-                  color: Colors.red,
-                ),
-                decoration: InputDecoration(
-                  label: Text('Phone'),
-                  labelStyle: TextStyle(
-                    color: Colors.black,
-                  ),
-                  prefix: Text('+880'),
-                  suffixIcon: Icon(Icons.phone),
-                  border: OutlineInputBorder(
-                      // borderSide: BorderSide(
-                      //   color: Colors.green,
-                      // ),
-                      ),
-                  // filled: true,
-                  // fillColor: Colors.red.withOpacity(0.5),
-                ),
-                maxLength: 10,
-              ),
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Center(
-              child: TextField(
-                // readOnly: true,
-                enabled: true,
-                autofocus: true,
-                // obscureText: true,
-                keyboardType: TextInputType.number, //only for popup
-                toolbarOptions: ToolbarOptions(
-                  copy: false,
-                  cut: false,
-                  paste: false,
-                  selectAll: false,
-                ),
-                style: TextStyle(
-                  color: Colors.red,
-                ),
-                decoration: InputDecoration(
-                  label: Text('Email'),
-                  labelStyle: TextStyle(
-                    color: Colors.black,
-                  ),
-                  suffix: Text('.com'),
-                  suffixIcon: Icon(Icons.mail_rounded),
-                  border: OutlineInputBorder(
-                      // borderSide: BorderSide(
-                      //   color: Colors.green,
-                      // ),
-                      ),
-                  // filled: true,
-                  // fillColor: Colors.red.withOpacity(0.5),
-                ),
-              ),
-            ),
-          ),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              primary: Colors.red, // background
-              onPrimary: Colors.white, // foreground
-            ),
-            onPressed: () {},
-            child: const Text('Submit'),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
