@@ -15,6 +15,46 @@ class MyApp extends StatelessWidget {
       appBar: AppBar(
         title: const Text('''Abid App'''),
         centerTitle: true,
+        backgroundColor: Colors.green,
+        shadowColor: Colors.green,
+        elevation: 80,
+        leading: Container(
+          child: Image.network(
+            'https://cdn.pixabay.com/photo/2017/05/26/16/08/glass-2346358_1280.png',
+            fit: BoxFit.fill,
+          ),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.shopping_bag),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.shopping_basket),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.shopping_cart),
+          ),
+        ],
+        actionsIconTheme: IconThemeData(
+          color: Colors.red,
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_bag),
+            label: 'Bag',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart),
+            label: 'Cart',
+          ),
+        ],
+        backgroundColor: Colors.green,
+        selectedItemColor: Colors.amber,
       ),
       drawer: Drawer(
         child: ListView(
@@ -39,48 +79,14 @@ class MyApp extends StatelessWidget {
         ),
       ),
       body: Center(
-        child: Stack(
-          clipBehavior: Clip.none,
-          children: [
-            Container(
-              height: 300,
-              width: 300,
-              // ignore: prefer_const_constructors
-              decoration: BoxDecoration(
-                color: Colors.amber,
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(15),
-                  bottomRight: Radius.circular(15),
-                ),
-                image: const DecorationImage(
-                  image: NetworkImage(
-                      'https://pngimage.net/wp-content/uploads/2019/05/royal-enfield-png-4.png'),
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black,
-                    blurRadius: 3,
-                    offset: Offset(3, 3),
-                  ),
-                ],
-              ),
+        child: AspectRatio(
+          aspectRatio: 15,
+          child: Container(
+            color: Colors.amber,
+            child: Center(
+              child: Text("Drinks Well"),
             ),
-            const Positioned(
-              left: -40,
-              top: -40,
-              child: CircleAvatar(
-                radius: 50,
-                backgroundColor: Color(0xff1E1E1E),
-                child: Text(
-                  'in Stock',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
