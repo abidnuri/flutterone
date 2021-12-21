@@ -1,3 +1,6 @@
+import 'package:abid/Bag.dart';
+import 'package:abid/Discount.dart';
+import 'package:abid/cart.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -7,8 +10,20 @@ void main() {
   ));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  var pages = [
+    const Bag(),
+    const Cart(),
+    const Discount(),
+  ];
+  var currentPage = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,32 +33,36 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.green,
         shadowColor: Colors.green,
         elevation: 80,
-        leading: Container(
-          child: Image.network(
-            'https://cdn.pixabay.com/photo/2017/05/26/16/08/glass-2346358_1280.png',
-            fit: BoxFit.fill,
-          ),
+        leading: Image.network(
+          'https://cdn.pixabay.com/photo/2017/05/26/16/08/glass-2346358_1280.png',
+          fit: BoxFit.fill,
         ),
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.shopping_bag),
+            icon: const Icon(Icons.shopping_bag),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.shopping_basket),
+            icon: const Icon(Icons.shopping_basket),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.shopping_cart),
+            icon: const Icon(Icons.shopping_cart),
           ),
         ],
-        actionsIconTheme: IconThemeData(
+        actionsIconTheme: const IconThemeData(
           color: Colors.red,
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        currentIndex: currentPage,
+        onTap: (value) {
+          setState(() {
+            currentPage = value;
+          });
+        },
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_bag),
             label: 'Bag',
@@ -51,6 +70,10 @@ class MyApp extends StatelessWidget {
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_cart),
             label: 'Cart',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.event_available),
+            label: 'Discount',
           ),
         ],
         backgroundColor: Colors.green,
@@ -78,16 +101,21 @@ class MyApp extends StatelessWidget {
           ],
         ),
       ),
-      body: Center(
-        child: AspectRatio(
-          aspectRatio: 15,
-          child: Container(
-            color: Colors.amber,
-            child: Center(
-              child: Text("Drinks Well"),
+      body: Column(
+        children: [
+          Center(
+            child: AspectRatio(
+              aspectRatio: 15,
+              child: Container(
+                color: Colors.amber,
+                child: const Center(
+                  child: Text("Drinks Well"),
+                ),
+              ),
             ),
           ),
-        ),
+          pages[currentPage],
+        ],
       ),
     );
   }
