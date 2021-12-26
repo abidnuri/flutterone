@@ -68,10 +68,11 @@ class MyApp extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "আমার জুতা",
+                            "Men Shoe",
                             style: TextStyle(
                               fontSize: 24,
                               color: Colors.white,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                           Row(
@@ -119,6 +120,7 @@ class MyApp extends StatelessWidget {
                     bottom: -10,
                     left: 28,
                     child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         CircleAvatar(
                           child: Icon(
@@ -127,8 +129,23 @@ class MyApp extends StatelessWidget {
                           ),
                           backgroundColor: Colors.white,
                         ),
-                        Image.network(
-                            "https://freepngimg.com/thumb/shoes/27428-5-nike-shoes-transparent-background.png")
+                      ],
+                    ),
+                  ),
+                  Positioned(
+                    bottom: -30,
+                    left: 28,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width / 2,
+                        ),
+                        Image.asset(
+                          'asset/shoe.png',
+                          height: 100,
+                          width: 240,
+                        ),
                       ],
                     ),
                   ),
@@ -143,7 +160,51 @@ class MyApp extends StatelessWidget {
             flex: 4,
             child: Container(
               width: double.infinity,
-              color: Colors.red,
+              color: Colors.white,
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Description",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        shadows: [
+                          Shadow(
+                            blurRadius: 3,
+                            offset: Offset(2, 2),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Text(
+                      '''This is a new brand adidas shoe. This is specially for sport's player.
+It has only one color available. Buy it in available discount.''',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 12,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Text(
+                      "Quantity",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
           Expanded(
