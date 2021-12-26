@@ -192,6 +192,41 @@ It has only one color available. Buy it in available discount.''',
                         fontWeight: FontWeight.bold,
                       ),
                     ),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Row(
+                      children: [
+                        TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            "+",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 30,
+                              color: Colors.black,
+                            ),
+                          ),
+                          style: TextButton.styleFrom(
+                            backgroundColor: Colors.grey,
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            "-",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 30,
+                              color: Colors.black,
+                            ),
+                          ),
+                          style: TextButton.styleFrom(
+                            backgroundColor: Colors.grey,
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
