@@ -117,36 +117,26 @@ class MyApp extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    bottom: -10,
+                    bottom: 0,
                     left: 28,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        CircleAvatar(
-                          child: Icon(
-                            Icons.favorite,
-                            color: Colors.red,
-                          ),
-                          backgroundColor: Colors.white,
-                        ),
-                      ],
+                    child: CircleAvatar(
+                      child: Icon(
+                        Icons.favorite,
+                        color: Colors.red,
+                      ),
+                      backgroundColor: Colors.white,
                     ),
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width / 2,
                   ),
                   Positioned(
                     bottom: -30,
-                    left: 28,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width / 2,
-                        ),
-                        Image.asset(
-                          'asset/shoe.png',
-                          height: 100,
-                          width: 240,
-                        ),
-                      ],
+                    right: 0,
+                    child: Image.asset(
+                      'asset/shoe.png',
+                      height: 100,
+                      width: 240,
                     ),
                   ),
                 ],
